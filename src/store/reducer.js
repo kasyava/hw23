@@ -3,7 +3,6 @@ const initialState ={
 };
 
 
-
 const calc =(expression)=>{
     try {
         while(expression.includes('--')){
@@ -32,6 +31,7 @@ const calc =(expression)=>{
         return "error"
     }
 };
+
 
 const reducer = (state = initialState, action) =>{
 
