@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import Counter from "./Containers/Counter/Counter";
+import Counter from "./Containers/Calculator/Calculator";
 
 
 

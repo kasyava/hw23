@@ -3,26 +3,32 @@ const initialState ={
 };
 
 
+
 const calc =(expression)=>{
-
-    while(expression.includes('--')){
-        expression = expression.replace('--','-')
-    }
-    while(expression.includes('++')){
-        expression = expression.replace('++','+')
-    }
-    while(expression.includes('//')){
-        expression = expression.replace('//','/')
-    }
-    while(expression.includes('**')){
-        expression = expression.replace('**','*')
-    }
-
     try {
-        return eval(expression);
+        while(expression.includes('--')){
+            expression = expression.replace('--','-')
+        }
+        while(expression.includes('++')){
+            expression = expression.replace('++','+')
+        }
+        while(expression.includes('//')){
+            expression = expression.replace('//','/')
+        }while(expression.includes('**')){
+            expression = expression.replace('**','*')
+        }
+        while(expression.includes('^^')){
+            expression = expression.replace('^^','^')
+        }
+        while(expression.includes('^')){
+            expression = expression.replace('^','**')
+        }
+
+
+        return eval(expression.toString());
 
     }
-    catch (e) {
+    catch (error) {
         return "error"
     }
 };
