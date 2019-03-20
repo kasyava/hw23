@@ -8,33 +8,25 @@ class Counter extends Component{
         return(
             <div className='Counter'>
                 <h1>{this.props.expression}</h1>
-                <button onClick={this.props.button0}>0</button>
-                <button onClick={this.props.button1}>1</button>
-                <button onClick={this.props.button2}>2</button>
-                <button onClick={this.props.button3}>3</button>
-                <button onClick={this.props.button4}>4</button>
-                <button onClick={this.props.button5}>5</button>
-                <button onClick={this.props.button6}>6</button>
-                <button onClick={this.props.button7}>7</button>
-                <button onClick={this.props.button8}>8</button>
-                <button onClick={this.props.button9}>9</button>
+                <button name="0" onClick={e => this.props.addChar(e.target.name)}>0</button>
+                <button name="1" onClick={e => this.props.addChar(e.target.name)}>1</button>
+                <button name="2" onClick={e => this.props.addChar(e.target.name)}>2</button>
+                <button name="3" onClick={e => this.props.addChar(e.target.name)}>3</button>
+                <button name="4" onClick={e => this.props.addChar(e.target.name)}>4</button>
+                <button name="5" onClick={e => this.props.addChar(e.target.name)}>5</button>
+                <button name="6" onClick={e => this.props.addChar(e.target.name)}>6</button>
+                <button name="7" onClick={e => this.props.addChar(e.target.name)}>7</button>
+                <button name="8" onClick={e => this.props.addChar(e.target.name)}>8</button>
+                <button name="9" onClick={e => this.props.addChar(e.target.name)}>9</button>
 
-                <button onClick={this.props.buttonSum}>+</button>
-                <button onClick={this.props.buttonDif}>-</button>
-                <button onClick={this.props.buttonDiv}>/</button>
-                <button onClick={this.props.buttonMult}>*</button>
-                <button onClick={this.props.buttonEqually}>=</button>
+                <button name="+" onClick={e => this.props.addChar(e.target.name)}>+</button>
+                <button name="-" onClick={e => this.props.addChar(e.target.name)}>-</button>
+                <button name="/" onClick={e => this.props.addChar(e.target.name)}>/</button>
+                <button name="*" onClick={e => this.props.addChar(e.target.name)}>*</button>
+
+                <button name="=" onClick={this.props.buttonEqually}>=</button>
                 <button onClick={this.props.buttonClear}>C</button>
 
-
-
-
-
-
-
-                <button onClick={this.props.decreaseCounter}>Decrease</button>
-                <button onClick={this.props.increaseCounter5}>Increase by 5</button>
-                <button onClick={this.props.decreaseCounter5}>Decrease by 5</button>
             </div>
         )
     }
@@ -50,31 +42,12 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) =>{
 
     return{
-        button0: () => dispatch({type: 'BUTTON_0', value: '0'}),
-        button1: () => dispatch({type: 'BUTTON_1', value: '1'}),
-        button2: () => dispatch({type: 'BUTTON_2', value: '2'}),
-        button3: () => dispatch({type: 'BUTTON_3', value: '3'}),
-        button4: () => dispatch({type: 'BUTTON_4', value: '4'}),
-        button5: () => dispatch({type: 'BUTTON_5', value: '5'}),
-        button6: () => dispatch({type: 'BUTTON_6', value: '6'}),
-        button7: () => dispatch({type: 'BUTTON_7', value: '7'}),
-        button8: () => dispatch({type: 'BUTTON_8', value: '8'}),
-        button9: () => dispatch({type: 'BUTTON_9', value: '9'}),
+        addChar:(char)=>dispatch({type: "ADD_CHAR", value: char}),
 
-        buttonSum: () => dispatch({type: 'BUTTON_SUM', value: '+'}),
-        buttonDif: () => dispatch({type: 'BUTTON_DIF', value: '-'}),
-        buttonDiv: () => dispatch({type: 'BUTTON_DIV', value: '/'}),
-        buttonMult: () => dispatch({type: 'BUTTON_MULT', value: '*'}),
         buttonEqually: () => dispatch({type: 'BUTTON_EQUALLY'}),
         buttonClear: () => dispatch({type: 'BUTTON_CLEAR'}),
 
 
-
-
-
-        decreaseCounter: () => dispatch({type: 'DECREMENT'}),
-        increaseCounter5: () => dispatch({type: 'INCREMENT5', value: 5}),
-        decreaseCounter5: () => dispatch({type: 'DECREMENT5', value: 5})
     }
 
 };
